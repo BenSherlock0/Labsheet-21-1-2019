@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Labsheet1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800" Loaded="Window_Loaded">
     <Grid>
         <ComboBox HorizontalAlignment="Left" Margin="112,62,0,0" VerticalAlignment="Top" Width="120"/>
         <Label Content="Genre" HorizontalAlignment="Left" Margin="53,62,0,0" VerticalAlignment="Top" Height="32"/>
