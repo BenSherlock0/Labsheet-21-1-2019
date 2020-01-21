@@ -17,10 +17,22 @@ namespace Labsheet1
 
         }
 
+        public Band(string name, int year, string members)
+        {
+            Name = name;
+            Year = year;
+            Members = members;
+        }
+
         public int CompareTo(object obj)
         {
             Band that = (Band)obj;
             return this.Name.CompareTo(that.Name);
+        }
+
+        public override string ToString()
+        {
+            return $"{Name}";
         }
     }
 }

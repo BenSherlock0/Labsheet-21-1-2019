@@ -29,7 +29,29 @@ namespace Labsheet1
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            CreateBand();
+        }
+        public void CreateBand()
+        {
+            Band b1 = new Band("BigB", 1990, "Tom Smith, Brad Duggan");
+            Band b2 = new Band("Duck Kingdom", 1990, "Tommy C, Susie C");
+            Band b3 = new Band("BigB", 1990, "Tom Smith, Brad Duggan");
+            Band b4 = new Band("BigB", 1990, "Tom Smith, Brad Duggan");
+            Band b5 = new Band("BigB", 1990, "Tom Smith, Brad Duggan");
+            Band b6 = new Band("BigB", 1990, "Tom Smith, Brad Duggan");
 
+            bands.Add(b1);
+            bands.Add(b2);
+            bands.Add(b3);
+            bands.Add(b4);
+            bands.Add(b5);
+            bands.Add(b6);
+
+            List<Band> sorted = bands.ToList();
+            sorted.Sort();
+            bands = new ObservableCollection<Band>(sorted);
+
+            lbxBands.ItemsSource = bands;
         }
     }
 }
