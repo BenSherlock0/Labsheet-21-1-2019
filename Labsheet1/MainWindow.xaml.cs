@@ -35,10 +35,10 @@ namespace Labsheet1
         {
             Band b1 = new Band("BigB", 1990, "Tom Smith, Brad Duggan");
             Band b2 = new Band("Duck Kingdom", 1990, "Tommy C, Susie C");
-            Band b3 = new Band("BigB", 1990, "Tom Smith, Brad Duggan");
-            Band b4 = new Band("BigB", 1990, "Tom Smith, Brad Duggan");
-            Band b5 = new Band("BigB", 1990, "Tom Smith, Brad Duggan");
-            Band b6 = new Band("BigB", 1990, "Tom Smith, Brad Duggan");
+            Band b3 = new Band("Wack", 1990, "Tim, Alex");
+            Band b4 = new Band("Cars", 1990, "Evil Tim, Slighty Annoyed Cat");
+            Band b5 = new Band("There", 1990, "Evilest Tim, Mega Jerk");
+            Band b6 = new Band("Hello", 1990, "Nice Tim");
 
             bands.Add(b1);
             bands.Add(b2);
