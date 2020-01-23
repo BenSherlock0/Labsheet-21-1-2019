@@ -7,14 +7,14 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800" Loaded="Window_Loaded">
     <Grid>
-        <ComboBox HorizontalAlignment="Left" Margin="112,62,0,0" VerticalAlignment="Top" Width="120"/>
+        <ComboBox x:Name="cbxGenre" HorizontalAlignment="Left" Margin="112,62,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="CbxGenre_SelectionChanged"/>
         <Label Content="Genre" HorizontalAlignment="Left" Margin="53,62,0,0" VerticalAlignment="Top" Height="32"/>
-        <ListBox x:Name="lbxBands" HorizontalAlignment="Left" Height="197" Margin="53,108,0,0" VerticalAlignment="Top" Width="179"/>
+        <ListBox x:Name="lbxBands" HorizontalAlignment="Left" Height="197" Margin="53,108,0,0" VerticalAlignment="Top" Width="179" SelectionChanged="LbxBands_SelectionChanged"/>
         <Label Content="Bands" HorizontalAlignment="Left" Margin="57,10,0,0" VerticalAlignment="Top" Height="47" Width="100" FontSize="20"/>
-        <Label Content="Band Information" HorizontalAlignment="Left" Margin="537,19,0,0" VerticalAlignment="Top" FontSize="20"/>
-        <TextBlock HorizontalAlignment="Left" Margin="537,67,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="79" Width="164"/>
+        <Label Content="Band Information" HorizontalAlignment="Left" Margin="537,20,0,0" VerticalAlignment="Top" FontSize="20"/>
+        <TextBlock x:Name="txtblkInformation" HorizontalAlignment="Left" Margin="537,67,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="79" Width="164"/>
         <Label Content="Albums" HorizontalAlignment="Left" Margin="537,165,0,0" VerticalAlignment="Top" FontSize="20"/>
-        <ListBox HorizontalAlignment="Left" Height="98" Margin="537,207,0,0" VerticalAlignment="Top" Width="164"/>
+        <ListBox x:Name="lbxAlblums" HorizontalAlignment="Left" Height="98" Margin="537,207,0,0" VerticalAlignment="Top" Width="164"/>
         <Button Content="Save" HorizontalAlignment="Left" Margin="626,326,0,0" VerticalAlignment="Top" Width="75"/>
 
     </Grid>

@@ -22,6 +22,8 @@ namespace Labsheet1
     public partial class MainWindow : Window
     {
         ObservableCollection<Band> bands= new ObservableCollection<Band>();
+        ObservableCollection<Band> filteredBands= new ObservableCollection<Band>();
+
         public MainWindow()
         {
             InitializeComponent();
@@ -29,16 +31,25 @@ namespace Labsheet1
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            cbxGenre.ItemsSource = new string[] { "All", "Rock", "Pop","Indie" };
+            //cbxGenre.SelectedItem = "All";
+
             CreateBand();
         }
         public void CreateBand()
         {
-            Band b1 = new Band("BigB", 1990, "Tom Smith, Brad Duggan");
-            Band b2 = new Band("Duck Kingdom", 1990, "Tommy C, Susie C");
-            Band b3 = new Band("Wack", 1990, "Tim, Alex");
-            Band b4 = new Band("Cars", 1990, "Evil Tim, Slighty Annoyed Cat");
-            Band b5 = new Band("There", 1990, "Evilest Tim, Mega Jerk");
-            Band b6 = new Band("Hello", 1990, "Nice Tim");
+            
+
+            Rock b1 = new Rock("BigB", 1990, "Tom Smith, Brad Duggan");
+            Band b2 = new Rock("Duck Kingdom", 1990, "Tommy C, Susie C");
+            Band b3 = new Pop("Wack", 1990, "Tim, Alex");
+            Band b4 = new Pop("Cars", 1990, "Evil Tim, Slighty Annoyed Cat");
+            Band b5 = new Indie("There", 1990, "Evilest Tim, Mega Jerk");
+            Band b6 = new Indie("Hello", 1990, "Nice Tim");
+
+            Album a1 = new Album() { Name = "Abbey Road" };
+
+            b1.Albums.Add(a1);
 
             bands.Add(b1);
             bands.Add(b2);
@@ -52,6 +63,65 @@ namespace Labsheet1
             bands = new ObservableCollection<Band>(sorted);
 
             lbxBands.ItemsSource = bands;
+        }
+
+        private void LbxBands_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Band selectedband = lbxBands.SelectedItem as Band;
+
+
+
+            txtblkInformation.Text = $"Formed: {selectedband.Year}\nMembers: {selectedband.Members}";
+
+            lbxAlblums.ItemsSource = selectedband.Albums;
+
+        }
+
+        private void CbxGenre_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+            filteredBands.Clear();
+
+            try
+            {
+
+                if (cbxGenre.SelectedItem == "Rock")
+                {
+                    foreach (Band rockband in bands)
+                    {
+                        if (rockband.GetType().Name == "Rock")
+                        {
+                            filteredBands.Add(rockband);
+                        }
+                    }
+                }
+                if (cbxGenre.SelectedItem == "Pop")
+                {
+                    foreach (Band popband in bands)
+                    {
+                        if (popband.GetType().Name == "Pop")
+                        {
+                            filteredBands.Add(popband);
+                        }
+                    }
+                }
+                if (cbxGenre.SelectedItem == "Indie")
+                {
+                    foreach (Band indieband in bands)
+                    {
+                        if (indieband.GetType().Name == "Indie")
+                        {
+                            filteredBands.Add(indieband);
+                        }
+                    }
+                }
+
+                lbxBands.ItemsSource = filteredBands;
+            }
+            catch
+            {
+
+            }
         }
     }
 }
