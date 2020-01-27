@@ -24,6 +24,8 @@ namespace Labsheet1
         ObservableCollection<Band> bands= new ObservableCollection<Band>();
         ObservableCollection<Band> filteredBands= new ObservableCollection<Band>();
 
+        Random rng = new Random();
+
         public MainWindow()
         {
             InitializeComponent();
@@ -47,9 +49,26 @@ namespace Labsheet1
             Band b5 = new Indie("There", 1990, "Evilest Tim, Mega Jerk");
             Band b6 = new Indie("Hello", 1990, "Nice Tim");
 
-            Album a1 = new Album() { Name = "Abbey Road" };
+            int randomYear = rng.Next(1989, 2000);
+
+            Album a1 = new Album() { Name = "Abbey Road",ReleaseDate = randomYear };
+            randomYear = rng.Next(1989, 2000);
+            Album a2 = new Album() { Name = "General Kenobi", ReleaseDate = randomYear };
+            randomYear = rng.Next(1989, 2000);
+            Album a3 = new Album() { Name = "Order 66", ReleaseDate = randomYear };
+            randomYear = rng.Next(1989, 2000);
+            Album a4 = new Album() { Name = "Up", ReleaseDate = randomYear };
+            randomYear = rng.Next(1989, 2000);
+            Album a5 = new Album() { Name = "Cats and Dogs", ReleaseDate = randomYear };
+            randomYear = rng.Next(1989, 2000);
+            Album a6 = new Album() { Name = "Fork", ReleaseDate = randomYear };
 
             b1.Albums.Add(a1);
+            b2.Albums.Add(a2);
+            b2.Albums.Add(a3);
+            b3.Albums.Add(a4);
+            b4.Albums.Add(a5);
+            b5.Albums.Add(a6);
 
             bands.Add(b1);
             bands.Add(b2);

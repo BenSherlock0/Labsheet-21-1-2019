@@ -9,12 +9,12 @@ namespace Labsheet1
     public class Album
     {
         public string Name { get; set; }
-        public DateTime ReleaseDate { get; set; }
+        public int ReleaseDate { get; set; }
         public int AlbumSales { get; set; }
 
         public override string ToString()
         {
-            return $"{Name}";
+            return $"{Name} {ReleaseDate}";
         }
     }
 }
